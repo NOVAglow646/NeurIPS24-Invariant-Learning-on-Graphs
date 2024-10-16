@@ -1,9 +1,0 @@
-includes:
-  - ../base.yaml
-extra_param:
-  - #spu loss weight
-    - 0.5
-  - #lable smoothing eps
-    - 0.2
-
-

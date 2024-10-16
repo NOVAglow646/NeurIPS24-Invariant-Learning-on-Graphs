@@ -59,29 +59,6 @@ class Pipeline:
         self.edge_mask_GNN=load_model(config.model.model_name, config).to(config.device)
 
 
-
-    def node_feature_clustering(self, rep, targets):
-        # Move data to GPU if available
-        device = self.config.device
-        rep = rep.to(device)
-        targets = targets.to(device)
-        unique_labels = torch.unique(targets)
-        cluster_ids = torch.zeros_like(targets)
-        for c in unique_labels:
-            # Get the representations for the current class
-            class_rep = rep[targets == c]
-            # Apply K-means clustering
-            #print(F"#in# Before kmeans:{ torch.cuda.memory_allocated(self.config.device)}")
-            class_cluster_ids, cluster_centers = kmeans(X=class_rep, num_clusters=self.config.ood.extra_param[4], distance='euclidean', device=device)
-            del cluster_centers
-            torch.cuda.empty_cache()
-            #print(F"#in# After kmeans:{ torch.cuda.memory_allocated(self.config.device)}")
-            # Assign cluster IDs (ranging from 0 to K-1) to the samples of the current class
-            cluster_ids[targets == c] = torch.tensor(class_cluster_ids, dtype=torch.long, device=device)
-        #print(F'#in# cluster_ids {cluster_ids}')
-        return cluster_ids
-
-
     def train_batch(self, data: Batch, pbar, pretrained_model=None, pretrained_inv_model=None) -> dict:
         r"""
         Train a batch. (Project use only)
@@ -126,7 +103,7 @@ class Pipeline:
         #if self.config.dataset.dataset_name=='GOODWebKB':
         #    mask_start_epoch=50
         if self.config.train.epoch>mask_start_epoch and self.config.use_inv_edge_mask and self.config.ood.ood_alg=='CIA':
-            if self.config.ood.extra_param[7]==1: # CIA-LRA
+            if self.config.ood.extra_param[1]==1: # CIA-LRA
                 node_features=self.edge_mask_GNN.get_embed(x=data.x, edge_index=data.edge_index, edge_weight=edge_weight)
                 if self.config.model.model_name in ['CIAGAT', 'GAT']:
                     edge_weight=compute_edge_mask_sigmoid(node_features=node_features, edges=data.edge_index)
@@ -144,19 +121,6 @@ class Pipeline:
         
         #print("#in# edge_weight", edge_weight)   
         #print("#in# data", data)    
-        
-        node_feature_cluster_ids=None
-        if self.config.ood.ood_alg=='CIA':
-            if self.config.ood.extra_param[1] and self.config.ood.extra_param[2]: #CIA node feature clustering
-                ERM_node_feature_model=pretrained_model[0]
-                ERM_node_pred, ERM_node_rep=ERM_node_feature_model(data=data)
-                #print(F'#IN# ERM_node_rep.shape={ERM_node_rep.shape}') #ERM_node_rep.shape=torch.Size([689, 300])
-                node_feature_cluster_ids=self.node_feature_clustering(rep=ERM_node_rep, targets=targets)
-            if self.config.ood.extra_param[3]: #CIA structure clustering
-                if self.config.ood.extra_param[1] and self.config.ood.extra_param[2]:
-                    structure_model=pretrained_model[1]
-                else:
-                    structure_model=pretrained_model[0]
                 
         #print(f'#in# training edge_weight {edge_weight.shape}') # torch.Size([55078])
         model_output = self.model(data=data, edge_weight=edge_weight, ood_algorithm=self.ood_algorithm)
@@ -177,12 +141,8 @@ class Pipeline:
         else:
             loss = self.ood_algorithm.loss_calculate(raw_pred, targets, mask, node_norm, self.config)
         #print(f'#in# {self.ood_algorithm}')
-        if self.config.ood.ood_alg=='CIA' and self.config.ood.extra_param[14] or self.config.ood.ood_alg=='ERM' and self.config.ood.extra_param[0]:
-            loss, var, dis = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config, node_feature_cluster_ids=node_feature_cluster_ids,\
-                                                    pretrained_model=pretrained_model, pretrained_inv_model=pretrained_inv_model,\
-                                                    edge_weight=edge_weight, ood_algorithm=self.ood_algorithm, writer=self.writer, model=self.model)
-        else:
-            loss = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config, node_feature_cluster_ids=node_feature_cluster_ids,\
+
+        loss = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config,\
                                                     pretrained_model=pretrained_model, pretrained_inv_model=pretrained_inv_model,\
                                                     edge_weight=edge_weight, ood_algorithm=self.ood_algorithm, writer=self.writer, model=self.model)
         '''if self.config.ood.ood_alg=='GTrans':
@@ -194,9 +154,7 @@ class Pipeline:
         if self.config.ood.ood_alg!='sp' or self.config.ood.ood_alg=='sp' and self.config.ood.extra_param[0]==0:
             self.ood_algorithm.backward(loss)
 
-        if self.config.ood.ood_alg=='CIA' and self.config.ood.extra_param[14] or self.config.ood.ood_alg=='ERM' and self.config.ood.extra_param[0]: 
-            print(f'#in# detach {var.detach()} {dis.detach()}')
-            return {'loss': loss.detach(), 'var':var.detach(), 'dis':dis.detach()}
+
         return {'loss': loss.detach()}
 
     def train(self):
@@ -212,76 +170,8 @@ class Pipeline:
         self.ood_algorithm.set_up(self.model, self.config, edge_mask_GNN=self.edge_mask_GNN)
 
         
-        
-        CIA_pretrained_model=[]
-        if self.config.ood.ood_alg=='CIA':
-            if self.config.ood.extra_param[1] and self.config.ood.extra_param[2]: 
-                # CIA node feature clustering, load pretrained ERM model
-                pretrained_ERM_model=CIAGCN(config=self.config)
-                pretr_model_path='/data1/qxwang/codes/GOOD/storage/checkpoints/CBAScov_ERM_pretrained.ckpt'
-                sd=torch.load(pretr_model_path, map_location=self.config.device)['state_dict']
-                pretrained_ERM_model.to(self.config.device)
-                pretrained_ERM_model.load_state_dict(sd)
-                pretrained_ERM_model.eval()
-                CIA_pretrained_model.append(pretrained_ERM_model)
-            if self.config.ood.extra_param[3]: 
-                # CIA topological structure clustering, to be imple
-                pass
-        
-        if self.config.ood.ood_alg=='sp': 
-            shift_str=self.config.dataset.shift_type
-            domain=self.config.dataset.domain
-            dataset_name=self.config.dataset.dataset_name
-            if self.config.ood.extra_param[0]==1 or self.config.ood.extra_param[0]==2:
-                #pretr_model_path='/data1/qxwang/codes/GOOD/storage/checkpoints/round2/GOODCora_word_covariate/GCN_sp_3l_meanpool_0.5dp/0.001lr_0.0wd/sp_no_param/last.ckpt'
-                if shift_str=='covariate':
-                    #pretr_model_path='/data1/qxwang/codes/GOOD/storage/checkpoints/round1/'+dataset_name+'_'+domain+'_'+shift_str+'/GCN_1l_meanpool_0.5dp/0.001lr_0.0wd/VREx_10.0/best.ckpt'
-                    pretr_model_path='/data1/qxwang/codes/GOOD/storage/checkpoints/round1/'+dataset_name+'_'+domain+'_'+shift_str+'/GCN_sp_1l_meanpool_0.5dp/0.001lr_0.0wd/sp_no_param_0/last.ckpt'
-                    if 'sp_no_param_0' in pretr_model_path:
-                        pretrained_sp_model=CIAGCN_no_center(config=self.config) # for cov, only consider sp features coming from neighboring hetero
-                    else:
-                        pretrained_sp_model=CIAGCN(config=self.config)
-                else:
-                    # for con, use a model that predicts env label
-                    #pretr_model_path='/data1/qxwang/codes/GOOD/storage/checkpoints/round1/'+dataset_name+'_'+domain+'_'+shift_str+'/GCN_sp_1l_meanpool_0.5dp/0.001lr_0.0wd/sp_no_param_0/last.ckpt'
-                    pretr_model_path='/data1/qxwang/codes/GOOD/storage/checkpoints/round1/'+dataset_name+'_'+domain+'_'+shift_str+'/GCN_1l_meanpool_0.5dp/0.001lr_0.0wd/VREx_10.0/best.ckpt'
-                    pretrained_sp_model=CIAGCN(config=self.config) # for con, consider 
-                sd=torch.load(pretr_model_path, map_location=self.config.device)['state_dict']
-                extractor_dict={k:v for k,v in sd.items() if 'classifier' not in k}
-                
-                pretrained_sp_model.to(self.config.device)
-                pretrained_sp_model.load_state_dict(extractor_dict,strict=False)
-                pretrained_sp_model.eval()
-
-        if self.config.ood.ood_alg=='sp':
-            if self.config.ood.extra_param[0]==2:
-                #pretr_model_path='/data1/qxwang/codes/GOOD/storage/checkpoints/round2/GOODCora_word_covariate/GCN_sp_3l_meanpool_0.5dp/0.001lr_0.0wd/sp_no_param/last.ckpt'
-                #pretr_inv_model_path='/data1/qxwang/codes/GOOD/storage/checkpoints/round1/GOODCora_word_covariate/GCN_3l_meanpool_0.5dp/0.001lr_0.0wd/VREx_10.0/best.ckpt'
-                pretr_inv_model_path='/data1/qxwang/codes/GOOD/storage/checkpoints/round1/GOODArxiv_word_covariate/GCN_3l_meanpool_0.5dp/0.001lr_0.0wd/VREx_10.0/best.ckpt'
-                pretrained_inv_model=CIAGCN(config=self.config)
-                sd=torch.load(pretr_inv_model_path, map_location=self.config.device)['state_dict']
-                extractor_dict={k:v for k,v in sd.items() if 'classifier' not in k}
-                
-                pretrained_inv_model.to(self.config.device)
-                pretrained_inv_model.load_state_dict(extractor_dict,strict=False)
-                pretrained_inv_model.eval()
-
-        
-
         # train the model
         time_epochs=[]
-        if self.config.ood.ood_alg=='CIA' and self.config.ood.extra_param[14]:
-            tensorboard_curve_str='LoRe-CIA-'+str(self.config.ood.extra_param[9]) if self.config.ood.extra_param[1]\
-                else 'CIA-'+str(self.config.ood.extra_param[0])
-            exp_name=os.path.join('/data1/qxwang/codes/GOOD/runs',tensorboard_curve_str)
-            writer = SummaryWriter(exp_name)
-            self.writer=writer
-        if self.config.ood.ood_alg=='ERM' and self.config.ood.extra_param[0]:
-            tensorboard_curve_str='ERM'
-            exp_name=os.path.join('/data1/qxwang/codes/GOOD/runs',tensorboard_curve_str)
-            writer = SummaryWriter(exp_name)
-            self.writer=writer
-        #exp_name=os.path.join('/data1/qxwang/codes/fine-grained-supervision-for-OOD/runs','no_shift', pt_str)
             
         
         for epoch in range(self.config.train.ctn_epoch, self.config.train.max_epoch):
@@ -295,8 +185,7 @@ class Pipeline:
             self.ood_algorithm.stage_control(self.config)
 
             pbar = tqdm(enumerate(self.loader['train']), total=len(self.loader['train']), **pbar_setting)
-            var=0.
-            dis=0.
+
             for index, data in pbar:
                 #print(F'#in# data.batch={data.batch}')
 
@@ -310,22 +199,9 @@ class Pipeline:
                 self.config.train.batch_id=index
 
                 # train a batch
-                if self.config.ood.ood_alg=='CIA':
-                    if (self.config.ood.extra_param[1] and self.config.ood.extra_param[2]) or self.config.ood.extra_param[3]: 
-                        # CIA cluster
-                        train_stat = self.train_batch(data, pbar, pertrained_model=CIA_pretrained_model)
-                    else:
-                        train_stat = self.train_batch(data, pbar)
-                elif self.config.ood.ood_alg=='sp' and self.config.ood.extra_param[0]==1:
-                    train_stat = self.train_batch(data, pbar, pretrained_model=pretrained_sp_model, pretrained_inv_model=None)
-                elif self.config.ood.ood_alg=='sp' and self.config.ood.extra_param[0]==2:
-                    train_stat = self.train_batch(data, pbar, pretrained_model=pretrained_sp_model, pretrained_inv_model=pretrained_inv_model)
-                else:
-                    train_stat = self.train_batch(data, pbar)
+                train_stat = self.train_batch(data, pbar)
                 mean_loss = (mean_loss * index + self.ood_algorithm.mean_loss) / (index + 1)
-                if self.config.ood.ood_alg=='CIA' and self.config.ood.extra_param[14] or self.config.ood.ood_alg=='ERM' and self.config.ood.extra_param[0]:
-                    var+=train_stat['var']
-                    dis+=train_stat['dis']
+
                 #print(F'#in# 33333')
                 if self.ood_algorithm.spec_loss is not None:
                     if isinstance(self.ood_algorithm.spec_loss, dict):
@@ -378,10 +254,7 @@ class Pipeline:
                 val_stat = self.evaluate('val')
                 #print('#IN#\ndebugging...5')
                 test_stat = self.evaluate('test')
-                if self.config.ood.ood_alg=='CIA' and self.config.ood.extra_param[14] or self.config.ood.ood_alg=='ERM' and self.config.ood.extra_param[0]:
-                    writer.add_scalar('Test acc.', test_stat['score'], epoch)
-                    writer.add_scalar('intra-class var.', var, epoch)
-                    writer.add_scalar('inter-class dis.', dis, epoch)
+
                 #print('#IN#\ndebugging...6')
 
                 # checkpoints save
@@ -446,7 +319,7 @@ class Pipeline:
             #    mask_start_epoch=50
             if self.config.train.epoch>mask_start_epoch:
                 if self.config.use_inv_edge_mask and self.config.ood.ood_alg=='CIA':
-                    if self.config.ood.extra_param[7]==1: # CIA-LRA
+                    if self.config.ood.extra_param[1]==1: # CIA-LRA
                         node_features=self.edge_mask_GNN.get_embed(x=data.x, edge_index=data.edge_index, edge_weight=None)
                         if self.config.model.model_name in ['CIAGAT', 'GAT']:
                             edge_weight=compute_edge_mask_sigmoid(node_features=node_features, edges=data.edge_index)

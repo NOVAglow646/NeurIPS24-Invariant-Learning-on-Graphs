@@ -1,78 +1,28 @@
 includes:
   - ../base.yaml
 extra_param:
-  - # [0] CIA loss (gt env partition) lambda
-    #- 1.0
-    #- 0.5
-    #- 0.1
+  - # [0] CIA lambda, Match DG lambda
+    - 0.1
     - 0.05
     - 0.01
     - 0.005
     - 0.001
-    #- 0.0005
-    #- 0.0001
-    
-    #- 0.4455 # for 
-  - # [1] if node feature clustering
-    - 0 
-  - # [2] if load pretrained ERM model to cluster node features
-    - 0
-  - # [3] if structure clustering
-    - 0
-  - # [4] node feature clustering K1
-    - 11111
-  - # [5] structure clustering K2
+    - 0.0005
+    - 0.0001
+  - # [1] 0: CIA; 1: CIA-LRA; 2:MatchDG
+    - 1
+  - # [2] CIA-LRA hops t
+    - 2
+    - 3
+    - 4
     - 5
-  - # [6] CIA loss (node feature clustering partition) lambda
-    #- 0.1
-    #- 0.05
-    #- 0.01
-    #- 0.005
-    #- 0.001
-    #- 0.0005
-    #- 0.0001
-    - 0.999
-  - # [7] if CIA reweighting
-    - 0
-  - # [8] CIA reweighting adjacent hops 
-    - 123456
-    #- 1
-    #- 2
-    #- 3
-    #- 4
-    #- 5
-    #- 6
-  - # [9] CIA reweighting loss lambda
-    - 0.77777 # only gt env wrt CIA
-    #- 1.0
-    #- 0.5 # bad
-    #- 0.1
-    #- 0.05
-    #- 0.01
-    #- 0.005
-    #- 0.001
-    #- 0.0005
-    #- 0.0001
-    #- 0.00005
-    #- 0.00001
-    #- 0.000001
+    - 6
+  - # [3] CIA-LRA lambda
+    - 0.05
+    - 0.01
+    - 0.005
+    - 0.001
+    - 0.0005
+    - 0.0001
   - # [10] if CIA gt loss
     - 2 # 1:CIA 2:MatchDG
-  - # [11] if CIA gt env label reweighting
-    - 0
-  - # [12] CIA gt env label reweighting loss lambda
-    - 0.6666
-    #- 0.01
-    #- 0.005
-    #- 0.001
-    #- 0.0005
-    #- 0.0001
-    #- 0.00005
-  - # [13] CIA gt env reweighting adjacent hops 
-    - 555
-    #- 2
-    #- 3
-    #- 4
-  - #[14] vis var and dis
-    - 0
- 
