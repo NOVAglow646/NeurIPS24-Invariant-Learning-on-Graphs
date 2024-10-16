@@ -2,7 +2,7 @@
 
 This repository includes a PyTorch implementation of our NeurIPS 2024 paper [Dissecting the Failure of Invariant Learning on Graphs](https://openreview.net/forum?id=7eFS8aZHAM&referrer=%5Bthe%20profile%20of%20Qixun%20Wang%5D(%2Fprofile%3Fid%3D~Qixun_Wang1)). The codebase is adapted from the [GOOD benchmark](https://github.com/divelab/GOOD), which incorporates the implementations of our proposed CIA and CIA-LRA.
 
-![](./GOOD/figures/main_method_illustration_v8_00.png)
+![](./figures/main_method_illustration_v8_00.png)
 
 ## Configuration
 
