@@ -1,0 +1,14 @@
+includes:
+  - ../base.yaml
+extra_param:
+  -
+    #- 0.001 # feature lr
+    - 0.0001
+    - 0.00001
+    - 0.000005
+  -
+    - 0.1 # structure lr
+    - 0.01
+  -
+    - 5 # delta optimization steps
+    - 10

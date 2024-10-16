@@ -1,0 +1,4 @@
+[console_scripts]
+goodtg = GOOD.kernel.main:goodtg
+goodtl = GOOD.kernel.launch:launch
+

@@ -1,0 +1,6 @@
+includes:
+  - ../base.yaml
+extra_param:
+- # whether just infer or not (don't train)
+ - 1 # 0: training; 1: sp feature distance vs hetero label distance; 
+#2: change rate of sp and inv features; 3: counting the ratio of adjacent but different env pairs

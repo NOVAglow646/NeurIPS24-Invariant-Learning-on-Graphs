@@ -1,0 +1,15 @@
+includes:
+  - base.yaml
+model:
+  model_name: CIGAdiv2GIN
+ood:
+  ood_alg: CIGAdiv2
+  ood_param: 0.8
+  extra_param:
+    - 1 # 47.68(10.13)
+
+train:
+  lr: 0.001
+  mile_stones:
+    - 150
+log_file: default

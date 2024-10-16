@@ -1,0 +1,95 @@
+includes:
+  - ../base.yaml
+extra_param:
+  - # [0] CIA loss (gt env partition) lambda
+    - 0.666
+    #- 0.5
+    #- 0.1
+    #- 0.05
+    #- 0.01
+    #- 0.005
+    #- 0.001
+    #- 0.0005
+    #- 0.0001
+    #- 0.00005 
+  - # [1] if node feature clustering
+    - 0 
+  - # [2] if load pretrained ERM model to cluster node features
+    - 0
+  - # [3] if structure clustering
+    - 0
+  - # [4] node feature clustering K1
+    - 10
+  - # [5] structure clustering K2
+    - 5
+  - # [6] CIA loss (node feature clustering partition) lambda
+    #- 0.1
+    #- 0.05
+    #- 0.01
+    #- 0.005
+    #- 0.001
+    #- 0.0005
+    #- 0.0001
+    - 0.999
+  - # [7] if CIA reweighting
+    - 1
+  - # [8] CIA reweighting adjacent hops 
+    #- 123456
+    #- 1
+    
+    #- 2
+    #- 3
+    #- 4
+    #- 5
+    #- 6
+    
+    #- 7
+    #- 8
+    #- 9
+    #- 10
+    #- 11
+    #- 12
+
+    - 15
+    - 20
+    - 25
+    - 30
+    - 35
+
+  - # [9] CIA reweighting loss lambda
+    #- 0.77777 # only gt env wrt CIA
+    
+    - 0.5 # GAT cora edge mask 最佳, cora开始变差
+    
+    #- 0.1 # GAT cora degree best
+    #- 0.05
+    #- 0.01 # suitable for Arxiv
+    #- 0.005
+    #- 0.001
+
+    #- 0.0005
+
+    #- 0.0001
+
+    #- 0.00005
+    #- 0.00001
+    #- 0.000001
+  - # [10] if CIA gt loss
+    - 0
+  - # [11] if CIA gt env label reweighting
+    - 0
+  - # [12] CIA gt env label reweighting loss lambda
+    - 0.6666
+    #- 0.01
+    #- 0.005
+    #- 0.001
+    #- 0.0005
+    #- 0.0001
+    #- 0.00005
+  - # [13] CIA gt env reweighting adjacent hops 
+    - 555
+    #- 2
+    #- 3
+    #- 4
+  - # [14] if visualize CDNV 
+    - 0

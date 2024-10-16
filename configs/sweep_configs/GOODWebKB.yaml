@@ -1,0 +1,4 @@
+lr:
+  - 0.001 # 0.1 for GAT
+weight_decay:
+  - 0.

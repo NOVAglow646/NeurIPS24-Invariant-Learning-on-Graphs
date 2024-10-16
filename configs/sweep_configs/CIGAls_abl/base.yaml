@@ -1,0 +1,10 @@
+includes:
+  - ../base.yaml
+extra_param:
+  -
+    - 0
+  -
+    - 0.5
+  - # label smoothing gamma
+    - 0.2
+    - 0.1

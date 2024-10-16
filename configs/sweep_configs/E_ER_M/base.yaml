@@ -1,0 +1,20 @@
+includes:
+  - ../base.yaml
+ood_param:
+  - 0.01
+  #- 0.001
+  #- 0.0001
+extra_param:
+  - # k: num_envs
+    - 7 
+  - # t: AT steps
+    - 1
+    #- 5
+  - # s:how many nodes for each node should be modified the link with 
+    #- 1
+    - 5
+  -
+    - 1e-2
+    - 5e-3
+    - 1e-3
+    - 1e-4

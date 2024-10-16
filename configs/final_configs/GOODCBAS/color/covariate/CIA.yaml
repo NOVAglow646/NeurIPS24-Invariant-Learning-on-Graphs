@@ -1,0 +1,32 @@
+includes:
+  - base.yaml
+model:
+  model_name: CIAGCN
+ood:
+  ood_alg: CIA
+  ood_param: 0.1
+  extra_param:
+    - 0.001
+    - 0
+    - 0
+    - 0
+    - 11111
+    - 5
+    - 0.999
+    - 0
+    - 123456
+    - 0.77777
+    - 2
+    - 0
+    - 0.6666
+    - 555
+    - 0
+train:
+  max_epoch: 200
+  lr: 0.003
+  mile_stones:
+    - 201
+  weight_decay: 0.0
+log_file: lb_sweeping
+clean_save: true
+num_workers: 1

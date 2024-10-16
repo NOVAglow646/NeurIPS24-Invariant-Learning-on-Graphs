@@ -1,0 +1,1 @@
+conda activate /data1/qxwang/conda_envs/pygood

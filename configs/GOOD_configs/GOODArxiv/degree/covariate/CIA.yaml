@@ -1,0 +1,12 @@
+includes:
+  - base.yaml
+model:
+  model_name: CIAGAT
+ood:
+  ood_alg: CIA
+  ood_param: 0.1
+train:
+  max_epoch: 50
+  lr: 1e-3
+  mile_stones: [150]
+

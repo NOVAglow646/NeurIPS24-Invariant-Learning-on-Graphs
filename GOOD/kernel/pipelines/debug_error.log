@@ -1,0 +1,665 @@
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Sun Nov 12 23:53:42 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/12/2023 11:53:46 PM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/12/2023 11:53:46 PM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;31mERROR[0m: 11/12/2023 11:53:46 PM - utils.py - line 52 : [1mOOD algorithm of given name does not exist.
+[0m
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 59, in main
+    ood_algorithm = load_ood_alg(config.ood.ood_alg, config)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/ood_manager.py", line 23, in load_ood_alg
+    print(f'#E#OOD algorithm of given name does not exist.')
+[1;31mERROR[0m: 11/12/2023 11:53:47 PM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 59, in main
+    ood_algorithm = load_ood_alg(config.ood.ood_alg, config)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/ood_manager.py", line 24, in load_ood_alg
+    raise e
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/ood_manager.py", line 21, in load_ood_alg
+    ood_algorithm: BaseOODAlg = register.ood_algs[name](config)
+KeyError: 'ERM_sp'
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Sun Nov 12 23:54:02 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/12/2023 11:54:02 PM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/12/2023 11:54:02 PM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;31mERROR[0m: 11/12/2023 11:54:03 PM - utils.py - line 52 : [1mOOD algorithm of given name does not exist.
+[0m
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 59, in main
+    ood_algorithm = load_ood_alg(config.ood.ood_alg, config)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/ood_manager.py", line 23, in load_ood_alg
+    print(f'#E#OOD algorithm of given name does not exist.')
+[1;31mERROR[0m: 11/12/2023 11:54:03 PM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 59, in main
+    ood_algorithm = load_ood_alg(config.ood.ood_alg, config)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/ood_manager.py", line 24, in load_ood_alg
+    raise e
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/ood_manager.py", line 21, in load_ood_alg
+    ood_algorithm: BaseOODAlg = register.ood_algs[name](config)
+KeyError: 'ERM_sp'
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Sun Nov 12 23:54:17 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/12/2023 11:54:17 PM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/12/2023 11:54:17 PM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;31mERROR[0m: 11/12/2023 11:54:17 PM - utils.py - line 52 : [1mOOD algorithm of given name does not exist.
+[0m
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 59, in main
+    ood_algorithm = load_ood_alg(config.ood.ood_alg, config)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/ood_manager.py", line 23, in load_ood_alg
+    print(f'#E#OOD algorithm of given name does not exist.')
+[1;31mERROR[0m: 11/12/2023 11:54:17 PM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 59, in main
+    ood_algorithm = load_ood_alg(config.ood.ood_alg, config)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/ood_manager.py", line 24, in load_ood_alg
+    raise e
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/ood_manager.py", line 21, in load_ood_alg
+    ood_algorithm: BaseOODAlg = register.ood_algs[name](config)
+KeyError: 'ERM_sp'
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:01:42 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:01:43 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:01:43 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:01:43 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:02:18 AM : [1mLoad training utils
+[0m[1;31mERROR[0m: 11/13/2023 12:02:19 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 78, in goodtg
+    raise e
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 360, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 172, in train
+    pretrained_sp_model.load_state_dict(sd)
+  File "/data1/qxwang/conda_envs/pygood/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1482, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for CIAGCN:
+	size mismatch for classifier.classifier.0.weight: copying a param with shape torch.Size([10, 300]) from checkpoint, the shape in current model is torch.Size([70, 300]).
+	size mismatch for classifier.classifier.0.bias: copying a param with shape torch.Size([10]) from checkpoint, the shape in current model is torch.Size([70]).
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:02:37 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:02:38 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:02:38 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:02:38 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:03:04 AM : [1mLoad training utils
+[0m[1;31mERROR[0m: 11/13/2023 12:03:04 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 78, in goodtg
+    raise e
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 360, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 172, in train
+    pretrained_sp_model.load_state_dict(sd)
+  File "/data1/qxwang/conda_envs/pygood/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1482, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for CIAGCN:
+	size mismatch for classifier.classifier.0.weight: copying a param with shape torch.Size([10, 300]) from checkpoint, the shape in current model is torch.Size([70, 300]).
+	size mismatch for classifier.classifier.0.bias: copying a param with shape torch.Size([10]) from checkpoint, the shape in current model is torch.Size([70]).
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:03:22 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:03:22 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:03:22 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:03:22 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:03:48 AM : [1mLoad training utils
+[0m[1;31mERROR[0m: 11/13/2023 12:03:48 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 78, in goodtg
+    raise e
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 360, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 172, in train
+    pretrained_sp_model.load_state_dict(sd)
+  File "/data1/qxwang/conda_envs/pygood/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1482, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for CIAGCN:
+	size mismatch for classifier.classifier.0.weight: copying a param with shape torch.Size([10, 300]) from checkpoint, the shape in current model is torch.Size([70, 300]).
+	size mismatch for classifier.classifier.0.bias: copying a param with shape torch.Size([10]) from checkpoint, the shape in current model is torch.Size([70]).
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:07:54 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:07:55 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:07:55 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:07:55 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:08:20 AM : [1mLoad training utils
+[0m[1;31mERROR[0m: 11/13/2023 12:08:20 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 78, in goodtg
+    raise e
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 362, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 174, in train
+    pretrained_sp_model.load_state_dict(extractor_dict)
+  File "/data1/qxwang/conda_envs/pygood/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1482, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for CIAGCN:
+	Missing key(s) in state_dict: "classifier.classifier.0.weight", "classifier.classifier.0.bias". 
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:08:39 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:08:39 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:08:39 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:08:39 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:09:05 AM : [1mLoad training utils
+[0m[1;31mERROR[0m: 11/13/2023 12:09:05 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 78, in goodtg
+    raise e
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 362, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 174, in train
+    pretrained_sp_model.load_state_dict(extractor_dict)
+  File "/data1/qxwang/conda_envs/pygood/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1482, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for CIAGCN:
+	Missing key(s) in state_dict: "classifier.classifier.0.weight", "classifier.classifier.0.bias". 
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:09:23 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:09:24 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:09:24 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:09:24 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:09:49 AM : [1mLoad training utils
+[0m[1;31mERROR[0m: 11/13/2023 12:09:49 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 78, in goodtg
+    raise e
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 362, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 174, in train
+    pretrained_sp_model.load_state_dict(extractor_dict)
+  File "/data1/qxwang/conda_envs/pygood/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1482, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for CIAGCN:
+	Missing key(s) in state_dict: "classifier.classifier.0.weight", "classifier.classifier.0.bias". 
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:11:42 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:11:42 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:11:42 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:11:42 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:12:07 AM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:00<?, ?it/s]  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:32<?, ?it/s]
+[1;31mERROR[0m: 11/13/2023 12:12:40 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 362, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 210, in train
+    train_stat = self.train_batch(data, pbar)
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 133, in train_batch
+    loss = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config, node_feature_cluster_ids=node_feature_cluster_ids, pretrained_model=pretrained_model, edge_weight=edge_weight, ood_algorithm=self.ood_algorithm)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/algorithms/ERM_sp.py", line 63, in loss_postprocess
+    rep=pretrained_sp_model(data=data, edge_weight=kwargs['edge_weight'], ood_algorithm=kwargs['ood_algorithm'])
+TypeError: 'NoneType' object is not callable
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:13:00 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:13:00 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:13:00 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:13:00 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:13:23 AM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:00<?, ?it/s]  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:06<?, ?it/s]
+[1;31mERROR[0m: 11/13/2023 12:13:29 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 362, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 210, in train
+    train_stat = self.train_batch(data, pbar)
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 133, in train_batch
+    loss = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config, node_feature_cluster_ids=node_feature_cluster_ids, pretrained_model=pretrained_model, edge_weight=edge_weight, ood_algorithm=self.ood_algorithm)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/algorithms/ERM_sp.py", line 63, in loss_postprocess
+    rep=pretrained_sp_model(data=data, edge_weight=kwargs['edge_weight'], ood_algorithm=kwargs['ood_algorithm'])
+TypeError: 'NoneType' object is not callable
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:13:47 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:13:48 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:13:48 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:13:48 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:14:13 AM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:00<?, ?it/s]  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:06<?, ?it/s]
+[1;31mERROR[0m: 11/13/2023 12:14:20 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 362, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 210, in train
+    train_stat = self.train_batch(data, pbar)
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 133, in train_batch
+    loss = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config, node_feature_cluster_ids=node_feature_cluster_ids, pretrained_model=pretrained_model, edge_weight=edge_weight, ood_algorithm=self.ood_algorithm)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/algorithms/ERM_sp.py", line 63, in loss_postprocess
+    rep=pretrained_sp_model(data=data, edge_weight=kwargs['edge_weight'], ood_algorithm=kwargs['ood_algorithm'])
+TypeError: 'NoneType' object is not callable
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:17:00 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:17:00 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:17:00 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:17:00 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:17:25 AM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:00<?, ?it/s][1;37mINFO[0m: [1m kwargs {'node_feature_cluster_ids': None, 'pretrained_model': None, 'edge_weight': tensor([1.0968, 1.0000, 1.3077,  ..., 1.5139, 1.7581, 1.0000], device='cuda:5'), 'ood_algorithm': <GOOD.ood_algorithms.algorithms.ERM_sp.ERM_sp object at 0x7fde5d037d00>}
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:07<?, ?it/s]
+[1;31mERROR[0m: 11/13/2023 12:17:33 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 362, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 210, in train
+    train_stat = self.train_batch(data, pbar)
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 133, in train_batch
+    loss = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config, node_feature_cluster_ids=node_feature_cluster_ids, pretrained_model=pretrained_model, edge_weight=edge_weight, ood_algorithm=self.ood_algorithm)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/algorithms/ERM_sp.py", line 63, in loss_postprocess
+    rep=pretrained_sp_model(data=data, edge_weight=kwargs['edge_weight'], ood_algorithm=kwargs['ood_algorithm'])
+TypeError: 'NoneType' object is not callable
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:17:53 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:17:54 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:17:54 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:17:54 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:18:19 AM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:00<?, ?it/s][1;37mINFO[0m: [1m kwargs {'node_feature_cluster_ids': None, 'pretrained_model': None, 'edge_weight': tensor([1.0000, 1.3782, 1.5769,  ..., 1.0164, 1.1273, 1.0000], device='cuda:5'), 'ood_algorithm': <GOOD.ood_algorithms.algorithms.ERM_sp.ERM_sp object at 0x7fa6be90dd90>}
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:06<?, ?it/s]
+[1;31mERROR[0m: 11/13/2023 12:18:26 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 362, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 210, in train
+    train_stat = self.train_batch(data, pbar)
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 133, in train_batch
+    loss = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config, node_feature_cluster_ids=node_feature_cluster_ids, pretrained_model=pretrained_model, edge_weight=edge_weight, ood_algorithm=self.ood_algorithm)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/algorithms/ERM_sp.py", line 63, in loss_postprocess
+    rep=pretrained_sp_model(data=data, edge_weight=kwargs['edge_weight'], ood_algorithm=kwargs['ood_algorithm'])
+TypeError: 'NoneType' object is not callable
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:18:46 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:18:47 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:18:47 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:18:47 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:19:14 AM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:00<?, ?it/s][1;37mINFO[0m: [1m kwargs {'node_feature_cluster_ids': None, 'pretrained_model': None, 'edge_weight': tensor([1.3492, 1.0968, 1.7895,  ..., 1.0164, 1.1273, 1.0000], device='cuda:5'), 'ood_algorithm': <GOOD.ood_algorithms.algorithms.ERM_sp.ERM_sp object at 0x7f27d796ed60>}
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:08<?, ?it/s]
+[1;31mERROR[0m: 11/13/2023 12:19:22 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 362, in load_task
+    if self.task == 'train':
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 210, in train
+    else:
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 133, in train_batch
+    loss = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config, node_feature_cluster_ids=node_feature_cluster_ids, pretrained_model=pretrained_model, edge_weight=edge_weight, ood_algorithm=self.ood_algorithm)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/algorithms/ERM_sp.py", line 63, in loss_postprocess
+    rep=pretrained_sp_model(data=data, edge_weight=kwargs['edge_weight'], ood_algorithm=kwargs['ood_algorithm'])
+TypeError: 'NoneType' object is not callable
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:22:48 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:22:51 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:22:51 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:22:52 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:23:17 AM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:00<?, ?it/s][1;37mINFO[0m: [1m kwargs {'node_feature_cluster_ids': None, 'pretrained_model': CIAGCN(
+  (feat_encoder): GCNFeatExtractor(
+    (encoder): GCNEncoder(
+      (relu1): ReLU()
+      (relus): ModuleList(
+        (0): ReLU()
+        (1): ReLU()
+      )
+      (batch_norm1): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (dropout1): Dropout(p=0.5, inplace=False)
+      (dropouts): ModuleList(
+        (0): Dropout(p=0.5, inplace=False)
+        (1): Dropout(p=0.5, inplace=False)
+      )
+      (readout): IdenticalPool()
+      (conv1): GCNConv(8710, 300)
+      (convs): ModuleList(
+        (0): GCNConv(300, 300)
+        (1): GCNConv(300, 300)
+      )
+    )
+  )
+  (classifier): Classifier(
+    (classifier): Sequential(
+      (0): Linear(in_features=300, out_features=70, bias=True)
+    )
+  )
+), 'edge_weight': tensor([1.0968, 1.0000, 1.3077,  ..., 1.5139, 1.7581, 1.0000], device='cuda:5'), 'ood_algorithm': <GOOD.ood_algorithms.algorithms.ERM_sp.ERM_sp object at 0x7fbc62777eb0>}
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:07<?, ?it/s]
+[1;31mERROR[0m: 11/13/2023 12:23:25 AM - utils.py - line 87 : [1mTraceback (most recent call last):
+  File "/data1/qxwang/conda_envs/pygood/bin/goodtg", line 33, in <module>
+    sys.exit(load_entry_point('graph-ood', 'console_scripts', 'goodtg')())
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 72, in goodtg
+    main()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/main.py", line 63, in main
+    pipeline.load_task()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 363, in load_task
+    self.train()
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 209, in train
+    train_stat = self.train_batch(data, pbar, pretrained_model=pretrained_sp_model)
+  File "/data1/qxwang/codes/GOOD/GOOD/kernel/pipelines/basic_pipeline.py", line 133, in train_batch
+    loss = self.ood_algorithm.loss_postprocess(loss, data, mask, self.config, node_feature_cluster_ids=node_feature_cluster_ids, pretrained_model=pretrained_model, edge_weight=edge_weight, ood_algorithm=self.ood_algorithm)
+  File "/data1/qxwang/codes/GOOD/GOOD/ood_algorithms/algorithms/ERM_sp.py", line 64, in loss_postprocess
+    if config.ood.extra_param[13]==1:
+IndexError: list index out of range
+[0m/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Mon Nov 13 00:23:44 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODCora
+[0m[1;34mDEBUG[0m: 11/13/2023 12:23:45 AM : [1mDataset: GOODCora()
+[0m[1;34mDEBUG[0m: 11/13/2023 12:23:45 AM : [1m Data(x=[19793, 8710], edge_index=[2, 126842], y=[19793], word=[19793], train_mask=[19793], val_mask=[19793], test_mask=[19793], id_val_mask=[19793], id_test_mask=[19793], env_id=[19793], domain='word', domain_id=[19793])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/13/2023 12:23:45 AM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/13/2023 12:24:09 AM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/10 [00:00<?, ?it/s]/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Tue Nov 14 13:14:46 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODArxiv
+[0m[1;34mDEBUG[0m: 11/14/2023 01:14:47 PM : [1mDataset: GOODArxiv()
+[0m[1;34mDEBUG[0m: 11/14/2023 01:14:47 PM : [1m Data(num_nodes=169343, edge_index=[2, 2315598], x=[169343, 128], node_year=[169343, 1], y=[169343], time=[169343], train_mask=[169343], val_mask=[169343], test_mask=[169343], id_val_mask=[169343], id_test_mask=[169343], env_id=[169343], domain='time', domain_id=[169343])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/14/2023 01:14:47 PM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/14/2023 01:15:36 PM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/100 [00:00<?, ?it/s]/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument num_batches in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+/data1/qxwang/codes/GOOD/GOOD/utils/config_reader.py:166: UserWarning: Argument batch_id in the chosen config yaml file are not defined in command arguments, which will lead to incomplete code detection and the lack of argument temporary modification by adding command arguments.
+  warnings.warn(f'Argument {key} in the chosen config yaml file are not defined in command arguments, '
+
+[1;37mINFO[0m: [1m-----------------------------------
+    Task: train
+Thu Nov 16 13:20:43 2023
+[0m[1;37mINFO[0m: [1mLoad Dataset GOODArxiv
+[0m[1;34mDEBUG[0m: 11/16/2023 01:20:44 PM : [1mDataset: GOODArxiv()
+[0m[1;34mDEBUG[0m: 11/16/2023 01:20:44 PM : [1m Data(num_nodes=169343, edge_index=[2, 2315598], x=[169343, 128], node_year=[169343, 1], y=[169343], degree=[169343], train_mask=[169343], val_mask=[169343], test_mask=[169343], id_val_mask=[169343], id_test_mask=[169343], env_id=[169343], domain='degree', domain_id=[169343])
+[0m[1;37mINFO[0m: [1mLoading model...
+[0m[1;34mDEBUG[0m: 11/16/2023 01:20:44 PM : [1mConfig model
+[0m[1;34mDEBUG[0m: 11/16/2023 01:21:17 PM : [1mLoad training utils
+[0m[1;37mINFO[0m: [1mEpoch 0:
+[0m  0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/100 [00:00<?, ?it/s][1;37mINFO[0m: [1m num_cur_c 29
+[0m[1;37mINFO[0m: [1m num_cur_c 29
+[0m[1;37mINFO[0m: [1m num_cur_c 227
+[0m[1;37mINFO[0m: [1m num_cur_c 122
+[0m[1;37mINFO[0m: [1m num_cur_c 282
+[0m[1;37mINFO[0m: [1m num_cur_c 208
+[0m[1;37mINFO[0m: [1m num_cur_c 67
+[0m[1;37mINFO[0m: [1m num_cur_c 21
+[0m[1;37mINFO[0m: [1m num_cur_c 314
+[0m[1;37mINFO[0m: [1m num_cur_c 109
+[0m[1;37mINFO[0m: [1m num_cur_c 370
+[0m[1;37mINFO[0m: [1m num_cur_c 34
+[0m[1;37mINFO[0m: [1m num_cur_c 3
+[0m[1;37mINFO[0m: [1m num_cur_c 104
+[0m[1;37mINFO[0m: [1m num_cur_c 39
+[0m[1;37mINFO[0m: [1m num_cur_c 24
+[0m[1;37mINFO[0m: [1m num_cur_c 1257
+[0m[1;37mINFO[0m: [1m num_cur_c 18
+[0m[1;37mINFO[0m: [1m num_cur_c 31
+[0m[1;37mINFO[0m: [1m num_cur_c 128
+[0m[1;37mINFO[0m: [1m num_cur_c 91
+[0m[1;37mINFO[0m: [1m num_cur_c 17
+[0m[1;37mINFO[0m: [1m num_cur_c 99
+[0m[1;37mINFO[0m: [1m num_cur_c 100
+[0m[1;37mINFO[0m: [1m num_cur_c 961
+[0m[1;37mINFO[0m: [1m num_cur_c 47
+[0m[1;37mINFO[0m: [1m num_cur_c 206
+[0m[1;37mINFO[0m: [1m num_cur_c 198
+[0m[1;37mINFO[0m: [1m num_cur_c 1007
+[0m[1;37mINFO[0m: [1m num_cur_c 15
+[0m[1;37mINFO[0m: [1m num_cur_c 543
+[0m[1;37mINFO[0m: [1m num_cur_c 94
+[0m[1;37mINFO[0m: [1m num_cur_c 27
+[0m[1;37mINFO[0m: [1m num_cur_c 35
+[0m[1;37mINFO[0m: [1m num_cur_c 382
+[0m[1;37mINFO[0m: [1m num_cur_c 6
+[0m[1;37mINFO[0m: [1m num_cur_c 189
+[0m[1;37mINFO[0m: [1m num_cur_c 96
+[0m[1;37mINFO[0m: [1m num_cur_c 53
+[0m[1;37mINFO[0m: [1m num_cur_c 104
+[0mLoss: 0.9615:   0%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 0/100 [57:44<?, ?it/s]Loss: 0.9615:   1%|[38;2;164;143;255m░░░░░░░░░░░░░░░░░░░░[0m| 1/100 [57:44<95:15:36, 3464.00s/it][1;37mINFO[0m: [1m num_cur_c 26
+[0m[1;37mINFO[0m: [1m num_cur_c 21
+[0m[1;37mINFO[0m: [1m num_cur_c 205
+[0m[1;37mINFO[0m: [1m num_cur_c 83
+[0m[1;37mINFO[0m: [1m num_cur_c 299
+[0m[1;37mINFO[0m: [1m num_cur_c 199
+[0m[1;37mINFO[0m: [1m num_cur_c 69
+[0m[1;37mINFO[0m: [1m num_cur_c 22
+[0m[1;37mINFO[0m: [1m num_cur_c 270
+[0m[1;37mINFO[0m: [1m num_cur_c 136
+[0m[1;37mINFO[0m: [1m num_cur_c 400
+[0m[1;37mINFO[0m: [1m num_cur_c 31
+[0m[1;37mINFO[0m: [1m num_cur_c 1
+[0m[1;37mINFO[0m: [1m num_cur_c 115
+[0m[1;37mINFO[0m: [1m num_cur_c 29
+[0m[1;37mINFO[0m: [1m num_cur_c 20
+[0m[1;37mINFO[0m: [1m num_cur_c 1141
+[0m[1;37mINFO[0m: [1m num_cur_c 12
+[0m[1;37mINFO[0m: [1m num_cur_c 28
+[0m[1;37mINFO[0m: [1m num_cur_c 130
+[0m[1;37mINFO[0m: [1m num_cur_c 105
+[0m[1;37mINFO[0m: [1m num_cur_c 24
+[0m[1;37mINFO[0m: [1m num_cur_c 98
+[0m[1;37mINFO[0m: [1m num_cur_c 135
+[0m[1;37mINFO[0m: [1m num_cur_c 1051
+[0m[1;37mINFO[0m: [1m num_cur_c 53
+[0m[1;37mINFO[0m: [1m num_cur_c 180
+[0m[1;37mINFO[0m: [1m num_cur_c 238
+[0m[1;37mINFO[0m: [1m num_cur_c 1039
+[0m

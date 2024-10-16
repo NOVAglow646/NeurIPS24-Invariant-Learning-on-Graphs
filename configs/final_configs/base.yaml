@@ -1,0 +1,40 @@
+task: train
+random_seed: 123
+exp_round: null
+log_file: default
+gpu_idx: 0
+ckpt_root: /data3/qxwang/checkpoints/GOOD_checkpoints
+ckpt_dir: null
+save_tag: null
+clean_save: False
+pytest: False
+pipeline: Pipeline
+num_workers: 0
+use_inv_edge_mask: False # by AXZ, if use invariant edge mask
+train:
+  weight_decay: 0.
+  save_gap: 10
+  tr_ctn: False
+  ctn_epoch: 0
+  epoch: 0
+  alpha: 0.2  # parameter for DANN
+  stage_stones: []
+  num_batches: 10 # by AXZ, number of batches per epoch
+  batch_id: 0 # by AXZ, batch id of an epoch
+  edge_mask_GNN_lr: 0.0001 # for GAT, CIAGAT
+  GCN_edge_mask_GNN_lr: 0.001 # 0.001 for Cora
+model:
+  dim_hidden: 300
+  dim_ffn: 300
+  dropout_rate: 0.5
+dataset:
+  dataloader_name: BaseDataLoader
+  dataset_root: null
+  generate: False
+  dim_node: null
+  dim_edge: null
+  num_classes: null
+  num_envs: null
+ood:
+  extra_param: null
+  

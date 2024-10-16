@@ -1,0 +1,4 @@
+lr:
+  - 1e-2 #1e-3 for GCN # 1e-2 for GAT
+weight_decay:
+  - 0.

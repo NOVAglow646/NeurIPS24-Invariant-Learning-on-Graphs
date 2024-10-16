@@ -1,0 +1,12 @@
+includes:
+  - base.yaml
+model:
+  model_name: GAT
+ood:
+  ood_alg: IRM
+  ood_param: 10.
+train:
+  max_epoch: 10
+  lr: 1e-3
+  mile_stones: [150]
+
