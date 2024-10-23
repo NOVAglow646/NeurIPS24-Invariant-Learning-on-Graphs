@@ -30,7 +30,7 @@ The datasets are supposed to be automatically downloaded from Web to `./storage/
 
 ### Set the hyperparameters for training
 
-The hyperparameter setting is adopted from the GOOD benchmark and is a bit complicated. Please see this [guideline](./hyperparameter_guideline.md) for how to set the hyperparameter search space.
+The hyperparameter setting is inherited from the GOOD benchmark and is a bit complicated. Please see this [guideline](./hyperparameter_guideline.md) for how to set the hyperparameter search space.
 
 
 
