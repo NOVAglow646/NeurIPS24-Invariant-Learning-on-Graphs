@@ -30,7 +30,7 @@ The datasets are supposed to be automatically downloaded from Web to `./storage/
 
 ### Set the hyperparameters for training
 
-The hyperparameter setting is inherited from the GOOD benchmark and is a bit complicated. Please see this [guideline](./hyperparameter_guideline.md) for how to set the hyperparameter search space.
+The hyperparameter setting is inherited from the GOOD benchmark. Please see this [guideline](./hyperparameter_guideline.md) for how to set the hyperparameter search space.
 
 
 
@@ -73,7 +73,7 @@ goodtl --sweep_root sweep_configs\
 Run:
 
 ```bash
-conda activate /data1/qxwang/conda_envs/pygood
+conda activate pygood
 goodtl --sweep_root sweep_configs\
  --final_root final_configs\
   --launcher HarvestLauncher\
@@ -90,7 +90,7 @@ This command will sweep over the specified dataset splits and algorithms, and th
 After that, run:
 
 ```bash
-conda activate /data1/qxwang/conda_envs/pygood
+conda activate pygood
 goodtl --config_root final_configs\
  --launcher HarvestLauncher\
   --allow_datasets GOODCora\ # training dataset
